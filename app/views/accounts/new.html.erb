@@ -1,0 +1,27 @@
+<h1>Accounts#new</h1>
+<p>Find me in app/views/accounts/new.html.erb</p>
+
+<div id="content">
+<%= form_for @account do |f| %>
+  <%= render "shared/error_messages", :target => @account %>
+
+  <div class="field_wrapper">
+    <%= f.label :subdomain, 'Desired subdomain' %>
+    <%= f.text_field :subdomain %>
+  </div>
+
+  <%= f.fields_for @user do |user| %>
+    <div class="field_wrapper">
+      <%= user.label :email, 'Your E-mail' %>
+      <%= user.text_field :email %>
+    </div>
+
+    <div class="field_wrapper">
+      <%= user.label :password %>
+      <%= user.password_field :password %>
+    </div>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
+</div>
