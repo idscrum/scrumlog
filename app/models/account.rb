@@ -3,6 +3,7 @@ class Account < ActiveRecord::Base
   attr_accessible :subdomain, :users
 
   has_many :users
+  has_many :products
 
   accepts_nested_attributes_for :users
 

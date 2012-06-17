@@ -8,6 +8,12 @@ Scrumlog::Application.routes.draw do
     devise_for :users
 
     root :to => "app#index"
+
+    get "admin" => 'app#admin'
+    
+    namespace :admin do
+      resources :products     
+    end
   end
 
   # The priority is based upon order of creation:
