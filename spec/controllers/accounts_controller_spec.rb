@@ -12,6 +12,7 @@ describe AccountsController do
 
       assigns(:account).should be_kind_of Account
       assigns(:user).should be_kind_of User
+      assigns(:user).account_role.should eq Account::OWNER
 
       response.should redirect_to(destination)
     end
