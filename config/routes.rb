@@ -1,10 +1,14 @@
 Scrumlog::Application.routes.draw do
+
+  resources :accounts
+
   get "site/index"
+
+  root :to => "site#index"
 
   constraints(Subdomain) do
     devise_for :users
 
-    root :to => redirect("/users/sign_in")
   end
 
   # The priority is based upon order of creation:
@@ -64,5 +68,4 @@ Scrumlog::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  root :to => "site#index"
 end

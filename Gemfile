@@ -47,7 +47,7 @@ group :test do
   gem "rr"
   gem "cucumber"
   gem "cucumber-rails"
-  gem "factory_girl"
+  gem "factory_girl_rails", "~> 3.0"
 
   # To use debugger
   # gem 'ruby-debug'
