@@ -6,6 +6,7 @@ class AccountsController < ApplicationController
 
   def create
     @user = User.new(params[:account][:user])
+    @user.account_role = Account::OWNER
     params[:account].delete :user
 
     @account = Account.new(params[:account])
